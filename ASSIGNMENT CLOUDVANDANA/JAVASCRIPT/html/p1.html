@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Descending Sort</title>
+</head>
+<body>
+    <h1>Descending Sort Example</h1>
+    <p>Original Array: <span id="originalArray"></span></p>
+    <p>Sorted Array (Descending): <span id="sortedArray"></span></p>
+
+    <script>
+        // JavaScript code for sorting an array in descending order
+        document.addEventListener("DOMContentLoaded", function () {
+            // Sample array to be sorted
+            const originalArray = [8, 4, 10, 2, 6];
+
+            // Display the original array
+            document.getElementById("originalArray").textContent = originalArray.join(', ');
+
+            // Sort the array in descending order
+            const sortedArray = originalArray.slice().sort((a, b) => b - a);
+
+            // Display the sorted array
+            document.getElementById("sortedArray").textContent = sortedArray.join(', ');
+        });
+    </script>
+</body>
+</html>
