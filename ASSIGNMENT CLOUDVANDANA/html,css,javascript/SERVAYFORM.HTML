@@ -91,7 +91,7 @@
                 <option value="USA">USA</option>
                 <option value="Canada">Canada</option>
                 <option value="UK">UK</option>
-                <!-- Add more options as needed -->
+             
             </select>
             <label>Gender:</label>
             <input type="checkbox" id="male" name="gender" value="Male"> Male
@@ -143,7 +143,7 @@
         function submitForm() {
             const form = document.getElementById("surveyForm");
             if (form.checkValidity()) {
-                // Get values from the form
+          
                 const firstName = document.getElementById("firstName").value;
                 const lastName = document.getElementById("lastName").value;
                 const dob = document.getElementById("dob").value;
@@ -154,7 +154,6 @@
                 const email = document.getElementById("email").value;
                 const mobile = document.getElementById("mobile").value;
 
-                // Display values in the popup
                 document.getElementById("resultFirstName").textContent = firstName;
                 document.getElementById("resultLastName").textContent = lastName;
                 document.getElementById("resultDob").textContent = dob;
@@ -164,10 +163,9 @@
                 document.getElementById("resultEmail").textContent = email;
                 document.getElementById("resultMobile").textContent = mobile;
 
-                // Show the popup
+              
                 document.getElementById("resultPopup").style.display = "flex";
 
-                // Reset the form
                 form.reset();
             } else {
                 alert("Please fill in all required fields.");
