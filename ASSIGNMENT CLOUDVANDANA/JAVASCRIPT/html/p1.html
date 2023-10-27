@@ -1,28 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Descending Sort</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-    <h1>Descending Sort Example</h1>
-    <p>Original Array: <span id="originalArray"></span></p>
-    <p>Sorted Array (Descending): <span id="sortedArray"></span></p>
+    <input type="text" id="inputSentence" placeholder="Enter a sentence">
+    <button onclick="reverseWords()">Reverse Words</button>
+    <p id="output"></p>
 
     <script>
-        // JavaScript code for sorting an array in descending order
-        document.addEventListener("DOMContentLoaded", function () {
-            // Sample array to be sorted
-            const originalArray = [8, 4, 10, 2, 6];
+        function reverseWords() {
+         
+            const sentence = document.getElementById("inputSentence").value;
 
-            // Display the original array
-            document.getElementById("originalArray").textContent = originalArray.join(', ');
+            const words = sentence.split(' ');
 
-            // Sort the array in descending order
-            const sortedArray = originalArray.slice().sort((a, b) => b - a);
+            const reversedWords = words.map(word => reverseWord(word));
 
-            // Display the sorted array
-            document.getElementById("sortedArray").textContent = sortedArray.join(', ');
-        });
+            const reversedSentence = reversedWords.join(' ');
+
+            document.getElementById("output").textContent = reversedSentence;
+        }
+
+        function reverseWord(word) {
+            let reversed = '';
+            for (let i = word.length - 1; i >= 0; i--) {
+                reversed += word[i];
+            }
+            return reversed;
+        }
     </script>
 </body>
 </html>
