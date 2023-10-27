@@ -1,28 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Reverse Words</title>
-    <script>
-        function reverseWords() {
-            var inputSentence = document.getElementById("inputSentence").value;
-            var words = inputSentence.split(' ');
-            var reversedSentence = "";
-
-            for (var i = 0; i < words.length; i++) {
-                var word = words[i];
-                var reversedWord = word.split('').reverse().join('');
-                reversedSentence += reversedWord + " ";
-            }
-
-            document.getElementById("outputSentence").textContent = reversedSentence;
-        }
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-    <h1>Reverse Words in a Sentence</h1>
-    <p>Enter a sentence and click the button to reverse every word in it:</p>
-    <input type="text" id="inputSentence" placeholder="Enter a sentence">
-    <button onclick="reverseWords()">Reverse</button>
-    <p><strong>Reversed Sentence:</strong> <span id="outputSentence"></span></p>
+    <input type="text" id="inputArray" placeholder="Enter comma-separated numbers">
+    <button onclick="sortDescending()">Sort Descending</button>
+    <p id="output"></p>
+    <script>
+         function sortDescending() {
+            
+            const inputArrayString = document.getElementById("inputArray").value;
+            
+            const inputArray = inputArrayString.split(',').map(Number);
+
+            inputArray.sort(function(a, b) {
+                return b - a;
+            });
+
+            document.getElementById("output").textContent = inputArray.join(', ');
+        }
+    </script>
 </body>
 </html>
